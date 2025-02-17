@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
+    <>
     <header className="bg-gray-800 text-white p-4 flex justify-between items-center">
       {/* Branding/Logo */}
       <div className="text-lg font-bold">
@@ -30,6 +31,7 @@ const Header = () => {
         </button>
       </div>
     </header>
+    </>
   );
 };
 
