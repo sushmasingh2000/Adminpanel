@@ -2,23 +2,24 @@ import { Delete, Edit } from '@mui/icons-material';
 import { Switch } from '@mui/material';
 import React, { useState } from 'react';
 import tshirt from "../../assets/download.jpg"
+import { useNavigate } from 'react-router-dom';
 
 
 const Category = () => {
   const [categories, setCategories] = useState([
-    { 
-      id: 1, 
+    {
+      id: 1,
       image: tshirt, // Placeholder image URL
-      name: "Mens", 
-      products: 1, 
-      status: "Active" 
+      name: "Mens",
+      products: 1,
+      status: "Active"
     },
     // Add more categories here...
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
-
-  const filteredCategories = categories.filter(category => 
+  const navigate = useNavigate()
+  const filteredCategories = categories.filter(category =>
     category.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -33,18 +34,19 @@ const Category = () => {
       <h2 className="text-2xl font-bold mb-4">Categories</h2>
 
       <div className="flex justify-between items-center mb-4">
-        <input 
-          type="text" 
-          placeholder="Search categories..." 
-          className="border border-gray-300 rounded px-3 py-2" 
+        <input
+          type="text"
+          placeholder="Search categories..."
+          className="border border-gray-300 rounded px-3 py-2"
           value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)} 
+          onChange={e => setSearchTerm(e.target.value)}
         />
         <div>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
             Reorder categories
           </button>
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            onClick={() => navigate('/addcategories')}>
             + Add new category
           </button>
         </div>
@@ -62,7 +64,7 @@ const Category = () => {
         </thead>
         <tbody>
           {filteredCategories.map(category => (
-            <tr  className="border-b">
+            <tr className="border-b">
               {/* <td className=" px-4 py-2 ">
                 <input type="checkbox"/>
               </td> */}
@@ -72,7 +74,7 @@ const Category = () => {
               </td>
               <td className=" px-4 py-2 text-center">{category.products}</td>
               <td className=" px-4 py-2 text-center">
-                <Switch 
+                <Switch
                   onClick={() => handleStatusChange(category.id)}
                   className={`px-2 py-1 rounded ${category.status === "Active" ? "!text-green-500 " : "!bg-gray-400 text-gray-700"}`}
                 >
@@ -80,8 +82,8 @@ const Category = () => {
                 </Switch>
               </td>
               <td className=" px-4 py-2 text-center">
-                <button className="text-blue-500 hover:text-blue-700 mr-2"><Edit/></button>
-                <button className="text-red-500 hover:text-red-700"><Delete/></button>
+                <button className="text-blue-500 hover:text-blue-700 mr-2"><Edit /></button>
+                <button className="text-red-500 hover:text-red-700"><Delete /></button>
               </td>
             </tr>
           ))}

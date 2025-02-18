@@ -8,6 +8,7 @@ import Header from './Layout/Header';
 import Product from './pages/component/Product';
 import AllProduct from './pages/component/AllProduct';
 import Category from './pages/component/Category';
+import AddCategories from './pages/component/AddCategory';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
               <Route path="/productdetail" element={<Product />} />
               <Route path="/products" element={<AllProduct />} />
               <Route path="/category" element={<Category />} />
+              <Route path="/addcategories" element={<AddCategories />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
           </main>
