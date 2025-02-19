@@ -24,7 +24,7 @@ const Sidebar = () => {
       icon: <FaThList />,
       label: "Products",
       children: [
-        { path: "/products/all", label: "All Products" },
+        { path: "/products", label: "All Products" },
         { path: "/products/categories", label: "Categories" },
         { path: "/products/inventory", label: "Inventory" },
       ]

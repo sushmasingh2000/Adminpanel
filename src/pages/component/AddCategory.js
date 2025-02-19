@@ -1,4 +1,4 @@
-import { ExpandLess, ExpandMore, Image, ImageAspectRatio, VideoCameraFront } from '@mui/icons-material';
+import { ExpandLess, ExpandMore, Image} from '@mui/icons-material';
 import React, { useState, useRef } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
@@ -6,9 +6,7 @@ import Variants from './Variant';
 
 
 const AddCategories = () => {
-    const [isInventoryOpen, setIsInventoryOpen] = useState(false);
-    const [isShippingOpen, setIsShippingOpen] = useState(false);
-    const [isVariantsOpen, setIsVariantsOpen] = useState(false);
+
     const [isSeoOpen, setIsSeoOpen] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const productInfoRef = useRef(null);
