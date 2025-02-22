@@ -16,9 +16,11 @@ const Sidebar = () => {
   };
 
   const menuItems = [
-    { path: "/", icon: <FaTachometerAlt />, label: "Dashboard" },
+    { path: "/dashboard", icon: <FaTachometerAlt />, label: "Dashboard" },
     { path: "/orders", icon: <FaShoppingBag />, label: "Orders" },
     { path: "/delivery", icon: <FaTruck />, label: "Delivery" },
+    { path: "/category", icon: <FaChartLine />, label: "Category" },
+
     {
       path: "/products",
       icon: <FaThList />,
@@ -29,7 +31,6 @@ const Sidebar = () => {
         { path: "/products/inventory", label: "Inventory" },
       ]
     },
-    { path: "/category", icon: <FaChartLine />, label: "Category" },
     { path: "/payouts", icon: <FaMoneyBill />, label: "Payouts" },
     { path: "/discounts", icon: <FaPercent />, label: "Discounts" },
     { path: "/audience", icon: <FaUsers />, label: "Audience" },
@@ -41,7 +42,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-64 h-screen bg-gray-800 text-white flex flex-col relative">
+    <div className="w-48 h-screen bg-gray-800 text-white flex flex-col relative">
       <div className="p-5 flex items-center space-x-3 border-b border-gray-700">
         <img src={user.avatar} alt="User Avatar" className="w-12 h-12 rounded-full" />
         <div>
